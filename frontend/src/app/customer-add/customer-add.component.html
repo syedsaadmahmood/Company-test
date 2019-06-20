@@ -1,0 +1,135 @@
+  <div class="section-div">
+    <div class="row">
+      <div class="col-md-5 col-sm-3 p-0">
+        <h2>Add User</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 p-0">
+        <div class="ac-fields-main clearfix mt-25">
+          <form (ngSubmit)="onAddUser()" #addUserForm="ngForm">
+            <div class="p-20">
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>NAME</label>
+                  <input type="text" class="form-control" [(ngModel)]="user.name" name="user_name"
+                         required id="user_name"
+                         autocomplete="off" #user_name="ngModel">
+                  <div *ngIf="user_name.invalid && (user_name.dirty || user_name.touched)">
+                    <div *ngIf="user_name.errors.required" style="color: #eb3b3b">
+                      Name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>USERNAME</label>
+                  <input type="text" class="form-control" [(ngModel)]="user.username" name="user_username"
+                         required id="user_username"
+                         autocomplete="off" #user_username="ngModel">
+                  <div *ngIf="user_username.invalid && (user_username.dirty || user_username.touched)">
+                    <div *ngIf="user_username.errors.required" style="color: #eb3b3b">
+                      Username is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>EMAIL ADDRESS</label>
+                  <input type="email" class="form-control" [(ngModel)]="user.email" name="user_email"
+                         required id="user_email"
+                         autocomplete="off" #user_email="ngModel">
+                  <div *ngIf="user_email.invalid && (user_email.dirty || user_email.touched)">
+                    <div *ngIf="user_email.errors.required" style="color: #eb3b3b">
+                      Email Address is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>PHONE NUMBER</label>
+                  <input type="number" class="form-control" [(ngModel)]="user.contact_number" name="user_phone"
+                         required id="user_phone"
+                         autocomplete="off" #user_phone="ngModel">
+                  <div *ngIf="user_phone.invalid && (user_phone.dirty || user_phone.touched)">
+                    <div *ngIf="user_phone.errors.required" style="color: #eb3b3b">
+                      Phone Number is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>COVER LETTER</label>
+                  <input type="file" placeholder="" [(ngModel)]="user.cover_letter" name="cover_letter"
+                         required id="cover_letter"
+                         autocomplete="off">
+                </div>
+              </div>
+
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>RESUME</label>
+                  <input type="file" placeholder="" [(ngModel)]="user.resume" name="resume"
+                         required id="resume"
+                         autocomplete="off">
+                </div>
+              </div>
+
+
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>ENTER PASSWORD</label>
+                  <input type="password" class="form-control" [(ngModel)]="user.password" name="user_password"
+                         required id="user_password"
+                         autocomplete="off" #user_password="ngModel">
+                  <div *ngIf="user_password.invalid && (user_password.dirty || user_password.touched)">
+                    <div *ngIf="user_password.errors.required" style="color: #eb3b3b">
+                      Password is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 col-sm-5 col-xs-12 m-height">
+                <div class="form-group c-label">
+                  <label>RE-ENTER PASSWORD</label>
+                  <input type="password" class="form-control" [(ngModel)]="user.confirmPassword" name="user_confirmPassword"
+                         required id="user_confirmPassword"
+                         autocomplete="off" #user_confirmPassword="ngModel">
+                  <div *ngIf="user_confirmPassword.invalid && (user_confirmPassword.dirty || user_confirmPassword.touched)">
+                    <div *ngIf="user_confirmPassword.errors.required" style="color: #eb3b3b">
+                      re-enter password is required.
+                    </div>
+                  </div>
+                  <div *ngIf="user_confirmPassword.valid">
+                    <div *ngIf="user.password!=user.confirmPassword" style="color: #eb3b3b">
+                      Both Password don't match
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-left clearfix mt-25">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <button class="btn btn-style" type="submit" [disabled]="addUserForm.invalid">
+                    ADD USER
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+

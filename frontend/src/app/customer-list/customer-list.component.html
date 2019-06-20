@@ -1,0 +1,43 @@
+<div class="section-div">
+  <div class="row">
+    <div class="col-md-5 col-sm-3 col-xs-5 p-0">
+      <h2>User List</h2>
+    </div>
+    <div class="col-md-7 col-sm-9 col-xs-7 p-0" style="text-align: right; padding-top: 12px">
+      <button type="button" class="btn btn-style"
+              aria-haspopup="true" aria-expanded="false" routerLink="/customer/add">+ ADD USER
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <div class="ac-fields-main clearfix mt-25">
+        <div class="table-responsive">
+          <table class="table" id="user-table">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Phone no</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of usersData; let i = index">
+              <td>{{data.id}}</td>
+              <td>{{data.first_name}}</td>
+              <td>{{data.username}}</td>
+              <td>{{data.email}}</td>
+              <td>{{data.contact_number}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
